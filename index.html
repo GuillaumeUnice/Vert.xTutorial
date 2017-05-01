@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="icon" href="images/favicon.ico" />
+
+		<title>Echyzen Vert.x Tutorial</title>
+				
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="import" id="link_what" href="chapters/what.html">
+		<link rel="import" id="link_how" href="chapters/how.html">
+		<link rel="import" id="link_concurrence" href="chapters/concurrence.html">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background-color="#782B90">
+					<img src="images/vertx.png" style="border: none;" alt="logo Vert.x" />
+					<p>Vert.x Overview</p>
+				</section>
+				<section id="what"></section>
+				<section id="how"></section>
+				<section id="concurrence"></section>
+				<section>
+					<img src="images/event-bus.png" style="border: none;" alt="Event Bus Schema" />
+					<h3>Event Bus</h3>
+					
+
+
+				</section>
+				<!--<section>
+					Communication by message passing (Event Bus)
+					Possibilité de faire du : Distributed Event Bus : en connectant plusieurs Vert.x JVM instance sur le même Event Bus
+					Bind avec les WebSocket et SockJS
+				</section>-->
+				<section>
+					<img src="images/app.png" width="650px" style="border: none;" alt="App schema" />
+					<h3>Architecture</h3>
+				</section>
+				<section>
+					<h3>Bibliography</h3>
+					<ul>
+						<li><a href="http://vertx.io/docs/" target="_blank">vertx.io</a></li>
+						<li><a href="https://www.youtube.com/watch?v=knJ7ihgrsQ8" target="_blank">Event Loop</a></li>
+						<li><a href="https://www.grafikart.fr/tutoriels/divers/concurrence-php-nodejs-golang-886" target="_blank">Concurrence</a></li>
+						<li><a href="https://www.youtube.com/watch?v=zKK-yfS5cZo" target="_blank">Vert.x introduction</a></li>
+						<li><a href="https://www.slideshare.net/jbandi/vertx-asynchronous-eventdriven-web-applications-on-the-jvm" target="_blank">Vert.x presentation</a></li>
+						<li><a href="https://www.infoq.com/fr/news/2013/05/vertx" target="_blank">Vert.x article</a></li>
+					</ul>
+				</section>
+				
+				<!--<div>TODO1</div>-->
+			</div>
+
+			<footer id="footer" class="animated-middle">
+				<ul class="icons">
+					<li><a href="https://github.com/GuillaumeUnice" class="icon" target="_blank"><i class="fa fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UC2Y0v3L_J9wTFkkqnLuCDGg" class="icon" target="_blank"><i class="fa fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/EchyzenWebsite" class="icon" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<!--<li><a href="https://vimeo.com/user13696089" class="icon" target="_blank"><i class="fa fa-vimeo-square"></i></a></li>
+					<li><a href="https://uk.pinterest.com/guillaumeunice/" class="icon" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/guillaume-borg-0904b8a8" class="icon" target="_blank"><i class="fa fa-linkedin"></i></a></li>-->
+				</ul>
+			</footer>
+		</div>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/web_component/webcomponents.min.js"></script>
+		
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+		<script>
+			document.getElementById("what").innerHTML = document.getElementById('link_what').import.body.innerHTML;
+			document.getElementById("how").innerHTML = document.getElementById('link_how').import.body.innerHTML;
+			document.getElementById("concurrence").innerHTML = document.getElementById('link_concurrence').import.body.innerHTML;
+		</script>
+	</body>
+</html>
