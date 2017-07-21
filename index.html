@@ -33,9 +33,6 @@
 				<section>
 					<img src="images/event-bus.png" style="border: none;" alt="Event Bus Schema" />
 					<h3>Event Bus</h3>
-					
-
-
 				</section>
 				<!--<section>
 					Communication by message passing (Event Bus)
@@ -83,7 +80,7 @@
 		</script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-		<script src="js/web_component/webcomponents.min.js"></script>
+		<script src="js/web_component/HTMLImports.min.js"></script>
 		
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -100,9 +97,11 @@
 			});
 		</script>
 		<script>
-			document.getElementById("what").innerHTML = document.getElementById('link_what').import.body.innerHTML;
-			document.getElementById("how").innerHTML = document.getElementById('link_how').import.body.innerHTML;
-			document.getElementById("concurrence").innerHTML = document.getElementById('link_concurrence').import.body.innerHTML;
+			document.addEventListener( 'HTMLImportsLoaded', function () {
+				document.getElementById("what").innerHTML = document.getElementById('link_what').import.body.innerHTML;
+				document.getElementById("how").innerHTML = document.getElementById('link_how').import.body.innerHTML;
+				document.getElementById("concurrence").innerHTML = document.getElementById('link_concurrence').import.body.innerHTML;
+			})
 		</script>
 	</body>
 </html>
